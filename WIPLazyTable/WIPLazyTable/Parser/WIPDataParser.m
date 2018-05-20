@@ -27,7 +27,6 @@
         const void *buffer = NULL;
         size_t size = 0;
         dispatch_data_t new_data_file = dispatch_data_create_map(data, &buffer, &size);
-        if(new_data_file){ /* to avoid warning really - since dispatch_data_create_map demands we care about the return arg */}
         
         _dataToParse = [[NSData alloc] initWithBytes:buffer length:size];
 
