@@ -18,13 +18,13 @@
         
         self.standardTopMargin =       APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
         self.standardBottomMargin =     APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
-        self.standardLeadingMargin =    APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
-        self.standardTrailingMargin =   APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
+        self.standardLeadingMargin =    APP_COMMON_NUMBER_PARAMETER(10.0f, 20.0f);
+        self.standardTrailingMargin =   APP_COMMON_NUMBER_PARAMETER(10.0f, 20.0f);
 
-        self.standardCellRowHeight =    APP_COMMON_NUMBER_PARAMETER(200.0f, 44.0f);
+        self.standardCellRowHeight =    APP_COMMON_NUMBER_PARAMETER(200.0f, 200.0f);
         
-        self.standardCellImageViewWidth =    APP_COMMON_NUMBER_PARAMETER(100.0f, 100.0f);
-        self.standardCellImageViewHeight =    APP_COMMON_NUMBER_PARAMETER(100.0f, 100.0f);
+        self.standardCellImageViewWidth =    APP_COMMON_NUMBER_PARAMETER(100.0f, 300.0f);
+        self.standardCellImageViewHeight =    APP_COMMON_NUMBER_PARAMETER(100.0f, 300.0f);
         self.standardCellImageSize = CGSizeMake(_standardCellImageViewWidth, _standardCellImageViewHeight);
 
         self.titlePalceholder =         @"No Title";
