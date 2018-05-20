@@ -67,9 +67,20 @@ static NSString *CellIdentifier = @"CellIdentifier";
         
         [cell titleLabel].text =       (rowsContent.title != nil) ? rowsContent.title : APP_COMMON.titlePalceholder; //APP_COMMON.titlePalceholder;
         [cell titleLabel].textColor =   [UIColor blackColor];
+        if (@available(iOS 8.2, *)) {
+            [cell titleLabel].font = [UIFont systemFontOfSize:APP_COMMON.cellTitleLabelFontSize weight:UIFontWeightBold];
+        } else {
+            [cell titleLabel].font = [UIFont systemFontOfSize:APP_COMMON.cellTitleLabelFontSize];
+        }
         
         [cell descriptionLabel].text =  (rowsContent.descriptionSubTitle != nil) ? rowsContent.descriptionSubTitle : APP_COMMON.descriptionPalceholder; //APP_COMMON.descriptionPalceholder;
         [cell descriptionLabel].textColor =   [UIColor blackColor];
+        if (@available(iOS 8.2, *)) {
+            [cell descriptionLabel].font = [UIFont systemFontOfSize:APP_COMMON.cellSubtitleLabelFontSize weight:UIFontWeightRegular];
+        } else {
+            [cell descriptionLabel].font = [UIFont systemFontOfSize:APP_COMMON.cellSubtitleLabelFontSize];
+        }
+
         
         if (!rowsContent.tileImage)
         {

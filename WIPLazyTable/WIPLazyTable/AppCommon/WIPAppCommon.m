@@ -27,6 +27,9 @@
         self.standardCellImageViewHeight =    APP_COMMON_NUMBER_PARAMETER(100.0f, 300.0f);
         self.standardCellImageSize = CGSizeMake(_standardCellImageViewWidth, _standardCellImageViewHeight);
 
+        self.cellTitleLabelFontSize =       APP_COMMON_NUMBER_PARAMETER(16.0f, 24.0f);
+        self.cellSubtitleLabelFontSize =    APP_COMMON_NUMBER_PARAMETER(12.0f, 20.0f);
+
         self.titlePalceholder =         @"No Title";
         self.descriptionPalceholder =     @"No Descriptiption Available";
     }

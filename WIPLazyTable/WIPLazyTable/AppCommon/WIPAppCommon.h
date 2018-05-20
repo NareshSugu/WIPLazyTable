@@ -38,8 +38,10 @@
 
 @property (nonatomic, assign) CGFloat standardCellImageViewWidth;
 @property (nonatomic, assign) CGFloat standardCellImageViewHeight;
-@property (nonatomic, assign) CGSize   standardCellImageSize;
+@property (nonatomic, assign) CGSize  standardCellImageSize;
 
+@property (nonatomic, assign) CGFloat cellTitleLabelFontSize;
+@property (nonatomic, assign) CGFloat cellSubtitleLabelFontSize;
 
 @property (nonatomic, assign) CGFloat standardCellRowHeight;
 
