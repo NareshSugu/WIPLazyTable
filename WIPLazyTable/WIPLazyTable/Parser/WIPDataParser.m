@@ -7,12 +7,7 @@
 //
 
 #import "WIPDataParser.h"
-
-#define kNavigationTitle            @"title"
-#define kRows                        @"rows"
-#define kRowTitle                   @"title"
-#define kRowDescription             @"description"
-#define kRowImageHref               @"imageHref"
+#import "WIPAppCommon.h"
 
 
 @interface WIPDataParser ()
@@ -89,6 +84,10 @@
         
         if ([tempArray count] > 0) {
             _countryBioGraphyRecord.rowsContent = (WIPCountryBioGraphyRowsContent*) tempArray;
+            tempArray = nil;
+            _countryBioGraphyRecordDictionary = @{ kNavigationTitle: _countryBioGraphyRecord.navigationTitle,
+                                                   kRows: _countryBioGraphyRecord.rowsContent };
+
         }
 
     }

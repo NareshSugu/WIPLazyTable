@@ -12,6 +12,13 @@
 #import "AppDelegate.h"
 
 #define kCustomRowCount 7
+
+#define kNavigationTitle            @"title"
+#define kRows                       @"rows"
+#define kRowTitle                   @"title"
+#define kRowDescription             @"description"
+#define kRowImageHref               @"imageHref"
+
 #define IDIOM    [[UIDevice currentDevice] userInterfaceIdiom]
 #define IPAD     UIUserInterfaceIdiomPad
 

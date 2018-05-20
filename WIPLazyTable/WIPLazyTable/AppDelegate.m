@@ -21,7 +21,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self exucuteNetworkRequest];
 
     CGRect windowFrame = [[UIScreen mainScreen] bounds];
     _window = [[UIWindow alloc] initWithFrame:windowFrame];
@@ -34,6 +33,7 @@
 
     [self setupAppCommon];
     
+    [self exucuteNetworkRequest];
 
     return YES;
 }
