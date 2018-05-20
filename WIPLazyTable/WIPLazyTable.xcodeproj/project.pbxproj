@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CABF30AD20B166FD00AA5977 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30AC20B166FD00AA5977 /* AppDelegate.m */; };
+		CABF30B020B166FD00AA5977 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30AF20B166FD00AA5977 /* ViewController.m */; };
+		CABF30B320B166FD00AA5977 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABF30B120B166FD00AA5977 /* Main.storyboard */; };
+		CABF30B520B166FF00AA5977 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABF30B420B166FF00AA5977 /* Assets.xcassets */; };
+		CABF30B820B166FF00AA5977 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABF30B620B166FF00AA5977 /* LaunchScreen.storyboard */; };
+		CABF30BB20B166FF00AA5977 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30BA20B166FF00AA5977 /* main.m */; };
+		CABF30C520B166FF00AA5977 /* WIPLazyTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30C420B166FF00AA5977 /* WIPLazyTableTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CABF30C120B166FF00AA5977 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CABF30A020B166FD00AA5977 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CABF30A720B166FD00AA5977;
+			remoteInfo = WIPLazyTable;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CABF30A820B166FD00AA5977 /* WIPLazyTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIPLazyTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CABF30AB20B166FD00AA5977 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CABF30AC20B166FD00AA5977 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CABF30AE20B166FD00AA5977 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CABF30AF20B166FD00AA5977 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CABF30B220B166FD00AA5977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CABF30B420B166FF00AA5977 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CABF30B720B166FF00AA5977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CABF30B920B166FF00AA5977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CABF30BA20B166FF00AA5977 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CABF30C020B166FF00AA5977 /* WIPLazyTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WIPLazyTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CABF30C420B166FF00AA5977 /* WIPLazyTableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WIPLazyTableTests.m; sourceTree = "<group>"; };
+		CABF30C620B166FF00AA5977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CABF30A520B166FD00AA5977 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CABF30BD20B166FF00AA5977 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CABF309F20B166FD00AA5977 = {
+			isa = PBXGroup;
+			children = (
+				CABF30AA20B166FD00AA5977 /* WIPLazyTable */,
+				CABF30C320B166FF00AA5977 /* WIPLazyTableTests */,
+				CABF30A920B166FD00AA5977 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CABF30A920B166FD00AA5977 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CABF30A820B166FD00AA5977 /* WIPLazyTable.app */,
+				CABF30C020B166FF00AA5977 /* WIPLazyTableTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CABF30AA20B166FD00AA5977 /* WIPLazyTable */ = {
+			isa = PBXGroup;
+			children = (
+				CABF30AB20B166FD00AA5977 /* AppDelegate.h */,
+				CABF30AC20B166FD00AA5977 /* AppDelegate.m */,
+				CABF30AE20B166FD00AA5977 /* ViewController.h */,
+				CABF30AF20B166FD00AA5977 /* ViewController.m */,
+				CABF30B120B166FD00AA5977 /* Main.storyboard */,
+				CABF30B420B166FF00AA5977 /* Assets.xcassets */,
+				CABF30B620B166FF00AA5977 /* LaunchScreen.storyboard */,
+				CABF30B920B166FF00AA5977 /* Info.plist */,
+				CABF30BA20B166FF00AA5977 /* main.m */,
+			);
+			path = WIPLazyTable;
+			sourceTree = "<group>";
+		};
+		CABF30C320B166FF00AA5977 /* WIPLazyTableTests */ = {
+			isa = PBXGroup;
+			children = (
+				CABF30C420B166FF00AA5977 /* WIPLazyTableTests.m */,
+				CABF30C620B166FF00AA5977 /* Info.plist */,
+			);
+			path = WIPLazyTableTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CABF30A720B166FD00AA5977 /* WIPLazyTable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CABF30C920B166FF00AA5977 /* Build configuration list for PBXNativeTarget "WIPLazyTable" */;
+			buildPhases = (
+				CABF30A420B166FD00AA5977 /* Sources */,
+				CABF30A520B166FD00AA5977 /* Frameworks */,
+				CABF30A620B166FD00AA5977 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WIPLazyTable;
+			productName = WIPLazyTable;
+			productReference = CABF30A820B166FD00AA5977 /* WIPLazyTable.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CABF30BF20B166FF00AA5977 /* WIPLazyTableTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CABF30CC20B166FF00AA5977 /* Build configuration list for PBXNativeTarget "WIPLazyTableTests" */;
+			buildPhases = (
+				CABF30BC20B166FF00AA5977 /* Sources */,
+				CABF30BD20B166FF00AA5977 /* Frameworks */,
+				CABF30BE20B166FF00AA5977 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CABF30C220B166FF00AA5977 /* PBXTargetDependency */,
+			);
+			name = WIPLazyTableTests;
+			productName = WIPLazyTableTests;
+			productReference = CABF30C020B166FF00AA5977 /* WIPLazyTableTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CABF30A020B166FD00AA5977 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = WiproDigital;
+				TargetAttributes = {
+					CABF30A720B166FD00AA5977 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+					CABF30BF20B166FF00AA5977 = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = CABF30A720B166FD00AA5977;
+					};
+				};
+			};
+			buildConfigurationList = CABF30A320B166FD00AA5977 /* Build configuration list for PBXProject "WIPLazyTable" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CABF309F20B166FD00AA5977;
+			productRefGroup = CABF30A920B166FD00AA5977 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CABF30A720B166FD00AA5977 /* WIPLazyTable */,
+				CABF30BF20B166FF00AA5977 /* WIPLazyTableTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CABF30A620B166FD00AA5977 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CABF30B820B166FF00AA5977 /* LaunchScreen.storyboard in Resources */,
+				CABF30B520B166FF00AA5977 /* Assets.xcassets in Resources */,
+				CABF30B320B166FD00AA5977 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CABF30BE20B166FF00AA5977 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CABF30A420B166FD00AA5977 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CABF30B020B166FD00AA5977 /* ViewController.m in Sources */,
+				CABF30BB20B166FF00AA5977 /* main.m in Sources */,
+				CABF30AD20B166FD00AA5977 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CABF30BC20B166FF00AA5977 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CABF30C520B166FF00AA5977 /* WIPLazyTableTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CABF30C220B166FF00AA5977 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CABF30A720B166FD00AA5977 /* WIPLazyTable */;
+			targetProxy = CABF30C120B166FF00AA5977 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CABF30B120B166FD00AA5977 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CABF30B220B166FD00AA5977 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CABF30B620B166FF00AA5977 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CABF30B720B166FF00AA5977 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CABF30C720B166FF00AA5977 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CABF30C820B166FF00AA5977 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CABF30CA20B166FF00AA5977 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Z2EX69D3W;
+				INFOPLIST_FILE = WIPLazyTable/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = wipro.digital.WIPLazyTable;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CABF30CB20B166FF00AA5977 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Z2EX69D3W;
+				INFOPLIST_FILE = WIPLazyTable/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = wipro.digital.WIPLazyTable;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CABF30CD20B166FF00AA5977 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Z2EX69D3W;
+				INFOPLIST_FILE = WIPLazyTableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = wipro.digital.WIPLazyTableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WIPLazyTable.app/WIPLazyTable";
+			};
+			name = Debug;
+		};
+		CABF30CE20B166FF00AA5977 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Z2EX69D3W;
+				INFOPLIST_FILE = WIPLazyTableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = wipro.digital.WIPLazyTableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WIPLazyTable.app/WIPLazyTable";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CABF30A320B166FD00AA5977 /* Build configuration list for PBXProject "WIPLazyTable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CABF30C720B166FF00AA5977 /* Debug */,
+				CABF30C820B166FF00AA5977 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CABF30C920B166FF00AA5977 /* Build configuration list for PBXNativeTarget "WIPLazyTable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CABF30CA20B166FF00AA5977 /* Debug */,
+				CABF30CB20B166FF00AA5977 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CABF30CC20B166FF00AA5977 /* Build configuration list for PBXNativeTarget "WIPLazyTableTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CABF30CD20B166FF00AA5977 /* Debug */,
+				CABF30CE20B166FF00AA5977 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CABF30A020B166FD00AA5977 /* Project object */;
+}
