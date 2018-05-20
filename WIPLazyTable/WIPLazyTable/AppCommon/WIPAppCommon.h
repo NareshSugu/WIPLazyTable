@@ -11,6 +11,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "AppDelegate.h"
 
+#define kCustomRowCount 7
 #define IDIOM    [[UIDevice currentDevice] userInterfaceIdiom]
 #define IPAD     UIUserInterfaceIdiomPad
 #define APP_COMMON_NUMBER_PARAMETER(smartphoneParam,tabletParam)  [WIPAppCommon numberParameterForSmartphone:(smartphoneParam) tablet:(tabletParam)]
@@ -18,6 +19,7 @@
 @interface WIPAppCommon : NSObject
 
 @property (nonatomic, assign) CGFloat standardVerticalMargin;
+@property (nonatomic, assign) CGFloat standardCellRowHeight;
 
 + (CGFloat)numberParameterForSmartphone:(CGFloat)smartphoneParam tablet:(CGFloat)tabletParam;
 

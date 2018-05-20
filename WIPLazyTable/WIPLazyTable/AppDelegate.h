@@ -12,6 +12,7 @@
 @class WIPAppCommon;
 
 #define SharedAppDelegate (AppDelegate *)[UIApplication sharedApplication].delegate
+#define APP_COMMON [SharedAppDelegate appCommon]
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

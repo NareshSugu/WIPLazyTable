@@ -13,7 +13,9 @@
 - (id) init {
     self = [super init];
     if(self){
-        self.standardVerticalMargin = APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
+        self.standardVerticalMargin =   APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
+        self.standardCellRowHeight =    APP_COMMON_NUMBER_PARAMETER(44.0f, 44.0f);
+
     }
     return self;
 }
