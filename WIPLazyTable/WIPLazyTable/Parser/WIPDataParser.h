@@ -14,7 +14,6 @@
 
 @property (nonatomic, copy) void (^errorHandler)(NSError *error);
 
-@property (nonatomic, strong, readonly) NSDictionary *countryBioGraphyList;
 @property (nonatomic, strong, readonly) WIPCountryBioGraphy *countryBioGraphyRecord;
 
 - (instancetype)initWithData:(NSData *)data;

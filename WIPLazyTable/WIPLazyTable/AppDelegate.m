@@ -70,7 +70,7 @@
     [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
 }
 
-- (void)DataProvider:(NSArray *)fetchedData {
+- (void)DataProvider:(NSDictionary *)fetchedData {
     
     _rootTableViewController.tableViewContentList = fetchedData;
     [_rootTableViewController.tableView reloadData];

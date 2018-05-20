@@ -18,7 +18,6 @@
 @interface WIPDataParser ()
 
 @property (nonatomic, strong) NSData *dataToParse;
-@property (nonatomic, strong) NSDictionary *CountryBioGraphyDict;
 
 @end
 
@@ -49,13 +48,16 @@
     _dataToParse = nil;
     NSData *dataUTF8 = [strISOLatin dataUsingEncoding:NSUTF8StringEncoding];
 
-    _countryBioGraphyList = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:NSJSONReadingMutableContainers error:&error];
+    id responseJson = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:NSJSONReadingMutableContainers error:&error];
     
-    NSLog(@"Response Json %@", [_countryBioGraphyList description]);
+    NSLog(@">>>>>>>>>> Response Json %@", [responseJson description]);
     
-    if ([_countryBioGraphyList isKindOfClass:[NSDictionary class]]) {
-        [self parseJsonResponse:_countryBioGraphyList];
+    if ([responseJson isKindOfClass:[NSDictionary class]]) {
+        [self parseJsonResponse:responseJson];
+    } else{
+        NSLog(@">>>>>>>>>>Invalid Json");
     }
+    responseJson = nil;
 }
 
 - (void)parseJsonResponse:(NSDictionary*) responseDict {

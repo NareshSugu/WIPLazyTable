@@ -24,7 +24,7 @@ static NSString * const canadaStateUrl =
 @property (strong, nonatomic) WIPAppCommon                  *appCommon;
 
 - (void)handleError:(NSError *)error;
-- (void)DataProvider:(NSArray *)fetchedData;
+- (void)DataProvider:(NSDictionary *)fetchedData;
 
 @end
 

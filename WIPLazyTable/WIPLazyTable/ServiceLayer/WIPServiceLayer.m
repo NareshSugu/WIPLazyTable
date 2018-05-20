@@ -79,9 +79,9 @@
                                             self.parser.completionBlock = ^(void) {
                                                 dispatch_async(dispatch_get_main_queue(), ^{
                                                     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                                                    if (weakParser.countryBioGraphyList != nil)
+                                                    if (weakParser.countryBioGraphyRecord != nil)
                                                     {
-                                                        [weakSelf hasDataDownloaded:weakParser.countryBioGraphyList];
+                                                        [weakSelf hasDataDownloaded:weakParser.countryBioGraphyRecord];
                                                     }
                                                 });
                                                 
@@ -100,9 +100,9 @@
     [SharedAppDelegate handleError:error];
 }
 
-- (void)hasDataDownloaded:(NSArray *) fetchedData
+- (void)hasDataDownloaded:(WIPCountryBioGraphy *) fetchedData
 {
-    [SharedAppDelegate DataProvider:fetchedData];
+    [SharedAppDelegate DataProvider:(NSDictionary*)fetchedData];
 }
 
 

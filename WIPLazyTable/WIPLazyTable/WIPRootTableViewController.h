@@ -10,6 +10,6 @@
 
 @interface WIPRootTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *tableViewContentList;
+@property (nonatomic, strong) NSDictionary *tableViewContentList;
 
 @end
