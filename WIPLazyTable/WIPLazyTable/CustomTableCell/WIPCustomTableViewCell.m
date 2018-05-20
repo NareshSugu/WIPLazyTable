@@ -65,8 +65,10 @@
 
 - (void)setupTileImageViewConstraints {
     [_tileImageView constraintSetSize:APP_COMMON.standardCellImageSize];
-    [_tileImageView constraintAlignLeadingOfView:_titleLabel withDistance:0.0f];
+    [_tileImageView constraintAlignLeadingInParentWithDistance:APP_COMMON.standardLeadingMargin];
     [_tileImageView constraintAlignBelowView:_titleLabel withDistance:APP_COMMON.standardVerticalMargin];
+    [_tileImageView constraintAlignBottomInParentWithDistance:APP_COMMON.standardBottomMargin];
+
 }
 
 - (void)setupTitleLabelConstraints {
@@ -81,7 +83,7 @@
     [_descriptionLabel constraintAlignBelowView:_titleLabel withDistance:APP_COMMON.standardTopMargin];
     [_descriptionLabel constraintAlignTrailingInParentWithDistance:APP_COMMON.standardTrailingMargin];
     [_descriptionLabel constraintAlignLeadingInParentWithDistance: APP_COMMON.standardLeadingMargin + APP_COMMON.standardCellImageViewWidth + APP_COMMON.standardHorizontalMargin];
-    [_descriptionLabel constraintAlignBottomInParentWithDistance:APP_COMMON.standardLeadingMargin];
+    [_descriptionLabel constraintAlignBottomInParentWithDistance:APP_COMMON.standardBottomMargin];
 
 }
 
