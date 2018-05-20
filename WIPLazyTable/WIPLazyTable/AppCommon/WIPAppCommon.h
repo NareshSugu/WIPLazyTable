@@ -16,6 +16,7 @@
 #define IPAD     UIUserInterfaceIdiomPad
 
 #define APP_COMMON_NUMBER_PARAMETER(smartphoneParam,tabletParam)  [WIPAppCommon numberParameterForSmartphone:(smartphoneParam) tablet:(tabletParam)]
+#define APP_COMMON_SIZE_PARAMETER(smartphoneParam,tabletParam)  [WIPAppCommon sizeParameterForSmartphone:(smartphoneParam) tablet:(tabletParam)]
 
 #define DEFAULT_TILE_IMAGE [UIImage imageNamed:@"wipro_logo"]
 
@@ -24,14 +25,21 @@
 @property (nonatomic, assign) CGFloat standardVerticalMargin;
 @property (nonatomic, assign) CGFloat standardHorizontalMargin;
 @property (nonatomic, assign) CGFloat standardTopMargin;
+@property (nonatomic, assign) CGFloat standardLeadingMargin;
+@property (nonatomic, assign) CGFloat standardTrailingMargin;
+
+@property (nonatomic, assign) CGFloat standardCellImageViewWidth;
+@property (nonatomic, assign) CGFloat standardCellImageViewHeight;
+@property (nonatomic, assign) CGSize   standardCellImageSize;
 
 
 @property (nonatomic, assign) CGFloat standardCellRowHeight;
 
 //use placeholder for Temp purpose
-@property (nonatomic,strong) NSString* titlePalceholder;
-@property (nonatomic,strong) NSString* descriptionPalceholder;
+@property (nonatomic, strong) NSString* titlePalceholder;
+@property (nonatomic, strong) NSString* descriptionPalceholder;
 
 + (CGFloat)numberParameterForSmartphone:(CGFloat)smartphoneParam tablet:(CGFloat)tabletParam;
++ (CGSize)sizeParameterForSmartphone:(CGSize)smartphoneParam tablet:(CGSize)tabletParam;
 
 @end
