@@ -21,6 +21,10 @@
 @property (nonatomic, assign) CGFloat standardVerticalMargin;
 @property (nonatomic, assign) CGFloat standardCellRowHeight;
 
+//use placeholder for Temp purpose
+@property (nonatomic,strong) NSString* titlePalceholder;
+@property (nonatomic,strong) NSString* descriptionPalceholder;
+
 + (CGFloat)numberParameterForSmartphone:(CGFloat)smartphoneParam tablet:(CGFloat)tabletParam;
 
 @end
