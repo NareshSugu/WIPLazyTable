@@ -14,21 +14,29 @@
 
 static NSString *CellIdentifier = @"CellIdentifier";
 
-@interface WIPRootTableViewController ()
+@interface WIPRootTableViewController () <UIScrollViewDelegate>
 
 @end
 
 @implementation WIPRootTableViewController
 
+- (void)dealloc
+{
+    [self terminateAllDownloads];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _imageDownloadsInProgress = [NSMutableDictionary dictionary];
+
     [self setupTableView];
 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self terminateAllDownloads];
 }
 
 - (void)setupTableView {
@@ -65,11 +73,16 @@ static NSString *CellIdentifier = @"CellIdentifier";
         
         if (!rowsContent.tileImage)
         {
+            if (self.tableView.dragging == NO && self.tableView.decelerating == NO)
+            {
                 [self startImageDownload:rowsContent forIndexPath:indexPath];
+            }
+            [cell tileImageView].image = DEFAULT_TILE_IMAGE;
+
         }
         else
         {
-            [cell tileImageView].image = rowsContent.tileImage; //DEFAULT_TILE_IMAGE
+            [cell tileImageView].image = rowsContent.tileImage;
         }
 
     }
@@ -97,4 +110,46 @@ static NSString *CellIdentifier = @"CellIdentifier";
         [imageDownloader startDownload];
     }
 }
+
+- (void)terminateAllDownloads
+{
+    // terminate all pending download connections
+    NSArray *allDownloads = [self.imageDownloadsInProgress allValues];
+    [allDownloads makeObjectsPerformSelector:@selector(cancelDownload)];
+    
+    [self.imageDownloadsInProgress removeAllObjects];
+}
+
+- (void)loadImagesForOnscreenRows
+{
+    if (_tableViewContentList[kRows] > 0)
+    {
+        NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
+        for (NSIndexPath *indexPath in visiblePaths)
+        {
+            WIPCountryBioGraphyRowsContent *rowContent = (_tableViewContentList[kRows])[indexPath.row];
+            
+            if (!rowContent.tileImage)
+            {
+                [self startImageDownload:rowContent forIndexPath:indexPath];
+            }
+        }
+    }
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate)
+    {
+        [self loadImagesForOnscreenRows];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self loadImagesForOnscreenRows];
+}
+
 @end
