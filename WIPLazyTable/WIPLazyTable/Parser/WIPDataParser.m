@@ -29,6 +29,7 @@
     self = [super init];
     if (self != nil)
     {
+        _countryBioGraphyRecord = [[WIPCountryBioGraphy alloc] init];
         const void *buffer = NULL;
         size_t size = 0;
         dispatch_data_t new_data_file = dispatch_data_create_map(data, &buffer, &size);
@@ -51,6 +52,44 @@
     _countryBioGraphyList = [NSJSONSerialization JSONObjectWithData:dataUTF8 options:NSJSONReadingMutableContainers error:&error];
     
     NSLog(@"Response Json %@", [_countryBioGraphyList description]);
+    
+    if ([_countryBioGraphyList isKindOfClass:[NSDictionary class]]) {
+        [self parseJsonResponse:_countryBioGraphyList];
+    }
+}
+
+- (void)parseJsonResponse:(NSDictionary*) responseDict {
+    
+    if ([responseDict[kNavigationTitle] isKindOfClass:[NSString class]]) {
+        _countryBioGraphyRecord.navigationTitle = responseDict[kNavigationTitle];
+    }
+    
+    if ([responseDict[kRows] isKindOfClass:[NSArray class]]) {
+        NSMutableArray* tempArray = [NSMutableArray new];
+        __block WIPCountryBioGraphyRowsContent *rowsContent = nil;
+            [responseDict[kRows] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if([obj isKindOfClass:[NSDictionary class]]){
+                    if(obj){
+                        
+                        rowsContent = [[WIPCountryBioGraphyRowsContent alloc] init];
+                        rowsContent.title = obj[kRowTitle];
+                        rowsContent.descriptionSubTitle = obj[kRowDescription];
+                        rowsContent.tileImageURLString = obj[kRowImageHref];
+
+                    }
+                    
+                    if (rowsContent) {
+                        [tempArray addObject:rowsContent];
+                    }
+                    
+                }
+            }];
+        
+        if ([tempArray count] > 0) {
+            _countryBioGraphyRecord.rowsContent = (WIPCountryBioGraphyRowsContent*) tempArray;
+        }
+
+    }
     
 }
 @end
