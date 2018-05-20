@@ -45,6 +45,7 @@
     
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_titleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+    _titleLabel.numberOfLines = 0;
     [self addSubview:_titleLabel];
     [self setupTitleLabelConstraints];
     
@@ -54,6 +55,7 @@
     
     _descriptionLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     [_descriptionLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+    _descriptionLabel.numberOfLines = 0;
     [self addSubview:_descriptionLabel];
     [self setupDescriptionLabelConstraints];
     
