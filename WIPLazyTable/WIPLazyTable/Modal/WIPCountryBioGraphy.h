@@ -6,15 +6,14 @@
 //  Copyright © 2018 WiproDigital. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "WIPCountryBioGraphyRowsContent.h"
 
 @interface WIPCountryBioGraphy : NSObject
 
 @property (nonatomic, strong) NSString  *navigationTitle;
 
-@property (nonatomic, strong) NSString  *title;
-@property (nonatomic, strong) UIImage   *tileImage;
-@property (nonatomic, strong) NSString  *descriptionSubTitle;
+@property (nonatomic, strong) WIPCountryBioGraphyRowsContent  *rowsContent;
 
 @end
+
