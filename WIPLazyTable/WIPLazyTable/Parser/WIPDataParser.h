@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WIPDataParser : NSObject
+@interface WIPDataParser : NSOperation
+
+@property (nonatomic, copy) void (^errorHandler)(NSError *error);
+@property (nonatomic, strong, readonly) NSArray *countryBioGraphyList;
+
+- (instancetype)initWithData:(NSData *)data;
 
 @end

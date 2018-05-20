@@ -10,4 +10,14 @@
 
 @implementation WIPDataParser
 
+- (instancetype)initWithData:(NSData *)data
+{
+    self = [super init];
+    if (self != nil)
+    {
+        
+    }
+    return self;
+}
+
 @end
