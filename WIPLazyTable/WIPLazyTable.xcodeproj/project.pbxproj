@@ -17,6 +17,8 @@
 		CA657C9320B1C266000FD7E5 /* WIPDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA657C9120B1C266000FD7E5 /* WIPDataParser.m */; };
 		CA657C9620B1FDA4000FD7E5 /* WIPCountryBioGraphyRowsContent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA657C9520B1FDA4000FD7E5 /* WIPCountryBioGraphyRowsContent.m */; };
 		CA657C9720B1FDA4000FD7E5 /* WIPCountryBioGraphyRowsContent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA657C9520B1FDA4000FD7E5 /* WIPCountryBioGraphyRowsContent.m */; };
+		CA657C9B20B22C76000FD7E5 /* WIPImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA657C9A20B22C76000FD7E5 /* WIPImageDownloader.m */; };
+		CA657C9C20B22C76000FD7E5 /* WIPImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA657C9A20B22C76000FD7E5 /* WIPImageDownloader.m */; };
 		CABF30AD20B166FD00AA5977 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30AC20B166FD00AA5977 /* AppDelegate.m */; };
 		CABF30B520B166FF00AA5977 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABF30B420B166FF00AA5977 /* Assets.xcassets */; };
 		CABF30B820B166FF00AA5977 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABF30B620B166FF00AA5977 /* LaunchScreen.storyboard */; };
@@ -52,6 +54,8 @@
 		CA657C9120B1C266000FD7E5 /* WIPDataParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WIPDataParser.m; sourceTree = "<group>"; };
 		CA657C9420B1FDA4000FD7E5 /* WIPCountryBioGraphyRowsContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WIPCountryBioGraphyRowsContent.h; sourceTree = "<group>"; };
 		CA657C9520B1FDA4000FD7E5 /* WIPCountryBioGraphyRowsContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WIPCountryBioGraphyRowsContent.m; sourceTree = "<group>"; };
+		CA657C9920B22C76000FD7E5 /* WIPImageDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WIPImageDownloader.h; sourceTree = "<group>"; };
+		CA657C9A20B22C76000FD7E5 /* WIPImageDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WIPImageDownloader.m; sourceTree = "<group>"; };
 		CABF30A820B166FD00AA5977 /* WIPLazyTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIPLazyTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABF30AB20B166FD00AA5977 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CABF30AC20B166FD00AA5977 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 			children = (
 				CA657C8B20B1C20D000FD7E5 /* WIPServiceLayer.h */,
 				CA657C8C20B1C20D000FD7E5 /* WIPServiceLayer.m */,
+				CA657C9920B22C76000FD7E5 /* WIPImageDownloader.h */,
+				CA657C9A20B22C76000FD7E5 /* WIPImageDownloader.m */,
 			);
 			path = ServiceLayer;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 				CABF30AD20B166FD00AA5977 /* AppDelegate.m in Sources */,
 				CA657C8820B1C0B9000FD7E5 /* WIPCountryBioGraphy.m in Sources */,
 				CABF30D220B1698F00AA5977 /* WIPRootTableViewController.m in Sources */,
+				CA657C9B20B22C76000FD7E5 /* WIPImageDownloader.m in Sources */,
 				CA657C7E20B18D67000FD7E5 /* UIView+Autolayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +333,7 @@
 				CA657C7F20B18D67000FD7E5 /* UIView+Autolayout.m in Sources */,
 				CA657C8920B1C0B9000FD7E5 /* WIPCountryBioGraphy.m in Sources */,
 				CABF30D820B16D7C00AA5977 /* WIPCustomTableViewCell.m in Sources */,
+				CA657C9C20B22C76000FD7E5 /* WIPImageDownloader.m in Sources */,
 				CA657C9720B1FDA4000FD7E5 /* WIPCountryBioGraphyRowsContent.m in Sources */,
 				CABF30E220B173BF00AA5977 /* WIPAppCommon.m in Sources */,
 			);
