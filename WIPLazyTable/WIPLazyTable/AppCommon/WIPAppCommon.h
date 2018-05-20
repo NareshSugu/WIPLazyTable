@@ -14,7 +14,10 @@
 #define kCustomRowCount 7
 #define IDIOM    [[UIDevice currentDevice] userInterfaceIdiom]
 #define IPAD     UIUserInterfaceIdiomPad
+
 #define APP_COMMON_NUMBER_PARAMETER(smartphoneParam,tabletParam)  [WIPAppCommon numberParameterForSmartphone:(smartphoneParam) tablet:(tabletParam)]
+
+#define DEFAULT_TILE_IMAGE [UIImage imageNamed:@"wipro_logo"]
 
 @interface WIPAppCommon : NSObject
 
