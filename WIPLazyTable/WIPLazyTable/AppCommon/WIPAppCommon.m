@@ -14,9 +14,10 @@
     self = [super init];
     if(self){
         self.standardVerticalMargin =   APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
-        self.standardHorizontalMargin =   APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
+        self.standardHorizontalMargin =  APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
         
-        self.standardTopMargin =        APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
+        self.standardTopMargin =       APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
+        self.standardBottomMargin =     APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
         self.standardLeadingMargin =    APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
         self.standardTrailingMargin =   APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
 

@@ -32,6 +32,7 @@
 @property (nonatomic, assign) CGFloat standardVerticalMargin;
 @property (nonatomic, assign) CGFloat standardHorizontalMargin;
 @property (nonatomic, assign) CGFloat standardTopMargin;
+@property (nonatomic, assign) CGFloat standardBottomMargin;
 @property (nonatomic, assign) CGFloat standardLeadingMargin;
 @property (nonatomic, assign) CGFloat standardTrailingMargin;
 
