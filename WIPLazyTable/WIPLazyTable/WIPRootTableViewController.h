@@ -11,5 +11,6 @@
 @interface WIPRootTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSDictionary *tableViewContentList;
+@property (nonatomic, strong) NSMutableDictionary *imageDownloadsInProgress;
 
 @end

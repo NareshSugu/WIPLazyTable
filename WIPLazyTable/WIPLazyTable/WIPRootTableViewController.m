@@ -10,6 +10,7 @@
 #import "WIPCustomTableViewCell.h"
 #import "WIPAppCommon.h"
 #import "WIPCountryBioGraphyRowsContent.h"
+#import "WIPImageDownloader.h"
 
 static NSString *CellIdentifier = @"CellIdentifier";
 
@@ -78,6 +79,22 @@ static NSString *CellIdentifier = @"CellIdentifier";
 
 - (void)startImageDownload:(WIPCountryBioGraphyRowsContent *)rowsContent forIndexPath:(NSIndexPath *)indexPath
 {
-    // execute image download
+    WIPImageDownloader *imageDownloader = (self.imageDownloadsInProgress)[indexPath];
+    if (imageDownloader == nil)
+    {
+        imageDownloader = [[WIPImageDownloader alloc] init];
+        imageDownloader.rowContentRecord = rowsContent;
+        [imageDownloader setCompletionHandler:^{
+            
+             WIPCustomTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            
+            [cell tileImageView].image = rowsContent.tileImage;
+            
+            [self.imageDownloadsInProgress removeObjectForKey:indexPath];
+            
+        }];
+        (self.imageDownloadsInProgress)[indexPath] = imageDownloader;
+        [imageDownloader startDownload];
+    }
 }
 @end
