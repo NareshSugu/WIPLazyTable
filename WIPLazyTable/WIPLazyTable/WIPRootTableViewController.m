@@ -9,6 +9,7 @@
 #import "WIPRootTableViewController.h"
 #import "WIPCustomTableViewCell.h"
 #import "WIPAppCommon.h"
+#import "WIPCountryBioGraphyRowsContent.h"
 
 static NSString *CellIdentifier = @"CellIdentifier";
 
@@ -50,11 +51,18 @@ static NSString *CellIdentifier = @"CellIdentifier";
     
     WIPCustomTableViewCell *cell = (WIPCustomTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    [cell titleLabel].text =        APP_COMMON.titlePalceholder;
-    [cell titleLabel].textColor =   [UIColor blackColor];
-    [cell tileImageView].image =    DEFAULT_TILE_IMAGE;
-    [cell descriptionLabel].text =  APP_COMMON.descriptionPalceholder;
-    [cell descriptionLabel].textColor =   [UIColor blackColor];
+    WIPCountryBioGraphyRowsContent *rowsContent = nil;
+    rowsContent = [_tableViewContentList[kRows] objectAtIndex:indexPath.row];
+    
+    if (rowsContent) {
+        
+        [cell titleLabel].text =       (rowsContent.title != nil) ? rowsContent.title : APP_COMMON.titlePalceholder; //APP_COMMON.titlePalceholder;
+        [cell titleLabel].textColor =   [UIColor blackColor];
+        [cell tileImageView].image =    DEFAULT_TILE_IMAGE;
+        [cell descriptionLabel].text =  (rowsContent.descriptionSubTitle != nil) ? rowsContent.descriptionSubTitle : APP_COMMON.descriptionPalceholder; //APP_COMMON.descriptionPalceholder;
+        [cell descriptionLabel].textColor =   [UIColor blackColor];
+
+    }
 
     return cell;
 }
