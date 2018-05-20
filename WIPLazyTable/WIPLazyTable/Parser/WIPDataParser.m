@@ -9,7 +9,7 @@
 #import "WIPDataParser.h"
 
 #define kNavigationTitle            @"title"
-#define kRow                        @"rows"
+#define kRows                        @"rows"
 #define kRowTitle                   @"title"
 #define kRowDescription             @"description"
 #define kRowImageHref               @"imageHref"
