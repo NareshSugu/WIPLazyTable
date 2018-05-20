@@ -10,4 +10,21 @@
 
 @implementation WIPAppCommon
 
+- (id) init {
+    self = [super init];
+    if(self){
+        self.standardVerticalMargin = APP_COMMON_NUMBER_PARAMETER(5.0f, 10.0f);
+    }
+    return self;
+}
+
++ (CGFloat)numberParameterForSmartphone:(CGFloat)smartphoneParam tablet:(CGFloat)tabletParam
+{
+    if(IDIOM == IPAD){
+        return tabletParam;
+    }
+    return smartphoneParam;
+    
+}
+
 @end

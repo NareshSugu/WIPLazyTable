@@ -18,6 +18,7 @@
 		CABF30D820B16D7C00AA5977 /* WIPCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30D620B16D7C00AA5977 /* WIPCustomTableViewCell.m */; };
 		CABF30E120B173BF00AA5977 /* WIPAppCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30E020B173BF00AA5977 /* WIPAppCommon.m */; };
 		CABF30E220B173BF00AA5977 /* WIPAppCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30E020B173BF00AA5977 /* WIPAppCommon.m */; };
+		CABF30E520B17DA300AA5977 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABF30E420B17DA300AA5977 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CABF30D620B16D7C00AA5977 /* WIPCustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WIPCustomTableViewCell.m; sourceTree = "<group>"; };
 		CABF30DF20B173BF00AA5977 /* WIPAppCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WIPAppCommon.h; sourceTree = "<group>"; };
 		CABF30E020B173BF00AA5977 /* WIPAppCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WIPAppCommon.m; sourceTree = "<group>"; };
+		CABF30E420B17DA300AA5977 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CABF30E520B17DA300AA5977 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +76,7 @@
 				CABF30AA20B166FD00AA5977 /* WIPLazyTable */,
 				CABF30C320B166FF00AA5977 /* WIPLazyTableTests */,
 				CABF30A920B166FD00AA5977 /* Products */,
+				CABF30E320B17DA300AA5977 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +131,14 @@
 				CABF30E020B173BF00AA5977 /* WIPAppCommon.m */,
 			);
 			path = AppCommon;
+			sourceTree = "<group>";
+		};
+		CABF30E320B17DA300AA5977 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CABF30E420B17DA300AA5977 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
