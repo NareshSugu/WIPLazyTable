@@ -14,6 +14,9 @@
 #define SharedAppDelegate (AppDelegate *)[UIApplication sharedApplication].delegate
 #define APP_COMMON [SharedAppDelegate appCommon]
 
+static NSString * const canadaStateUrl =
+@"https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json";
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow                      *window;

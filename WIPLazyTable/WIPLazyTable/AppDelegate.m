@@ -9,8 +9,11 @@
 #import "AppDelegate.h"
 #import "WIPAppCommon.h"
 #import "UIView+Autolayout.h"
+#import "WIPServiceLayer.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) WIPServiceLayer   *serviceLayer;
 
 @end
 
@@ -29,6 +32,8 @@
     [UIView setTopWindow:self.window];
 
     [self setupAppCommon];
+    
+    [self exucuteNetworkRequest];
 
     return YES;
 }
@@ -41,6 +46,13 @@
     
 }
 
+- (void)exucuteNetworkRequest {
+    
+    if (_serviceLayer == nil) {
+        _serviceLayer = [[WIPServiceLayer alloc] initWithUrl:canadaStateUrl];
+    }
+    
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

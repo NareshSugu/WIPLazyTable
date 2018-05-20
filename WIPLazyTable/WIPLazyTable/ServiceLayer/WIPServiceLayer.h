@@ -10,4 +10,6 @@
 
 @interface WIPServiceLayer : NSObject
 
+-(instancetype)initWithUrl:(NSString*) requestURLString;
+
 @end
