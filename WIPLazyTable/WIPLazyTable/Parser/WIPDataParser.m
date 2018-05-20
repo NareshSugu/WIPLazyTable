@@ -8,6 +8,13 @@
 
 #import "WIPDataParser.h"
 
+#define kNavigationTitle            @"title"
+#define kRow                        @"rows"
+#define kRowTitle                   @"title"
+#define kRowDescription             @"description"
+#define kRowImageHref               @"imageHref"
+
+
 @interface WIPDataParser ()
 
 @property (nonatomic, strong) NSData *dataToParse;
