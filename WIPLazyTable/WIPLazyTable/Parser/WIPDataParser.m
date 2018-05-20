@@ -75,10 +75,10 @@
                                 rowsContent.title = obj[kRowTitle];
                             }
                             if (![obj[kRowDescription] isEqual:[NSNull null]]) {
-                                rowsContent.descriptionSubTitle = obj[kRowTitle];
+                                rowsContent.descriptionSubTitle = obj[kRowDescription];
                             }
                             if (![obj[kRowImageHref] isEqual:[NSNull null]]) {
-                                rowsContent.tileImageURLString = obj[kRowTitle];
+                                rowsContent.tileImageURLString = obj[kRowImageHref];
                             }
 
                         }
