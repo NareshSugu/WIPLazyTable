@@ -21,7 +21,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [self exucuteNetworkRequest];
+
     CGRect windowFrame = [[UIScreen mainScreen] bounds];
     _window = [[UIWindow alloc] initWithFrame:windowFrame];
     _rootTableViewController = [[WIPRootTableViewController alloc]init];
@@ -33,7 +34,6 @@
 
     [self setupAppCommon];
     
-    [self exucuteNetworkRequest];
 
     return YES;
 }
@@ -70,6 +70,12 @@
     [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
 }
 
+- (void)DataProvider:(NSArray *)fetchedData {
+    
+    _rootTableViewController.tableViewContentList = fetchedData;
+    [_rootTableViewController.tableView reloadData];
+    
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
