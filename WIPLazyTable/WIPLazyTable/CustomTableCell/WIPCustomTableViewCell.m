@@ -68,6 +68,8 @@
     [_tileImageView constraintSetSize:APP_COMMON.standardCellImageSize];
     [_tileImageView constraintAlignLeadingInParentWithDistance:APP_COMMON.standardLeadingMargin];
     [_tileImageView constraintAlignBelowView:_titleLabel withDistance:APP_COMMON.standardVerticalMargin];
+    // TODO temp enable this constraint as dynamic height has some problem
+    [_tileImageView constraintAlignBottomInParentWithDistance:APP_COMMON.standardBottomMargin];
 
 }
 
