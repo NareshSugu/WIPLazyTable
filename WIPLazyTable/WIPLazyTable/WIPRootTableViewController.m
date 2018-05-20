@@ -58,13 +58,26 @@ static NSString *CellIdentifier = @"CellIdentifier";
         
         [cell titleLabel].text =       (rowsContent.title != nil) ? rowsContent.title : APP_COMMON.titlePalceholder; //APP_COMMON.titlePalceholder;
         [cell titleLabel].textColor =   [UIColor blackColor];
-        [cell tileImageView].image =    DEFAULT_TILE_IMAGE;
+        
         [cell descriptionLabel].text =  (rowsContent.descriptionSubTitle != nil) ? rowsContent.descriptionSubTitle : APP_COMMON.descriptionPalceholder; //APP_COMMON.descriptionPalceholder;
         [cell descriptionLabel].textColor =   [UIColor blackColor];
+        
+        if (!rowsContent.tileImage)
+        {
+                [self startImageDownload:rowsContent forIndexPath:indexPath];
+        }
+        else
+        {
+            [cell tileImageView].image = rowsContent.tileImage; //DEFAULT_TILE_IMAGE
+        }
 
     }
 
     return cell;
 }
 
+- (void)startImageDownload:(WIPCountryBioGraphyRowsContent *)rowsContent forIndexPath:(NSIndexPath *)indexPath
+{
+    // execute image download
+}
 @end
