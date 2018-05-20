@@ -8,16 +8,21 @@
 
 #import "WIPCustomTableViewCell.h"
 #import "AppDelegate.h"
+#import "UIView+Autolayout.h"
+#import "WIPAppCommon.h"
 
 @implementation WIPCustomTableViewCell
 
-- (void)awakeFromNib {
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
     
-    [super awakeFromNib];
-    [self setupCellView];
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self setupCellView];
+    }
     
+    return self;
 }
-
 - (void)setupCellView {
     
     [self setupTitleLabel];
@@ -26,6 +31,7 @@
 
 }
 
+#pragma mark setupView
 - (void)setupTileImageView {
     
     _tileImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
@@ -53,12 +59,19 @@
     
 }
 
+#pragma mark Constraints
+
 - (void)setupTileImageViewConstraints {
     // set Constraints
 }
 
 - (void)setupTitleLabelConstraints {
-    // set Constraints
+    
+    [_titleLabel constraintAlignTopInParentWithDistance:APP_COMMON.standardTopMargin];
+    [_titleLabel constraintAlignLeadingInParentWithDistance:APP_COMMON.standardHorizontalMargin];
+    [_titleLabel constraintAlignTrailingInParentWithDistance:APP_COMMON.standardHorizontalMargin];
+    [_titleLabel constraintAlignBottomInParentWithDistance:APP_COMMON.standardVerticalMargin];
+
 }
 
 - (void)setupDescriptionLabelConstraints {

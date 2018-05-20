@@ -19,6 +19,10 @@
 @interface WIPAppCommon : NSObject
 
 @property (nonatomic, assign) CGFloat standardVerticalMargin;
+@property (nonatomic, assign) CGFloat standardHorizontalMargin;
+@property (nonatomic, assign) CGFloat standardTopMargin;
+
+
 @property (nonatomic, assign) CGFloat standardCellRowHeight;
 
 //use placeholder for Temp purpose

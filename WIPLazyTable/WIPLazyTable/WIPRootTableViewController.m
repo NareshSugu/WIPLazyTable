@@ -20,12 +20,15 @@ static NSString *CellIdentifier = @"CellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.allowsSelection = NO;
     
     [self.tableView registerClass:[WIPCustomTableViewCell class] forCellReuseIdentifier:CellIdentifier];
+    [self tableView].dataSource = self;
+    [self tableView].delegate = self;
+
+    [self tableView].allowsSelection = NO;
     
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
-//    self.tableView.estimatedRowHeight = APP_COMMON.standardCellRowHeight;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = APP_COMMON.standardCellRowHeight;
 
 }
 
@@ -42,8 +45,11 @@ static NSString *CellIdentifier = @"CellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    WIPCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-
+    WIPCustomTableViewCell *cell = (WIPCustomTableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    [cell titleLabel].text = APP_COMMON.titlePalceholder;
+    [cell titleLabel].textColor = [UIColor blackColor];
+    
     return cell;
 }
 
