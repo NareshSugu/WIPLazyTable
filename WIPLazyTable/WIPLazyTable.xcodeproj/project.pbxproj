@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CABF30AD20B166FD00AA5977 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30AC20B166FD00AA5977 /* AppDelegate.m */; };
-		CABF30B020B166FD00AA5977 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30AF20B166FD00AA5977 /* ViewController.m */; };
 		CABF30B520B166FF00AA5977 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABF30B420B166FF00AA5977 /* Assets.xcassets */; };
 		CABF30B820B166FF00AA5977 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABF30B620B166FF00AA5977 /* LaunchScreen.storyboard */; };
 		CABF30BB20B166FF00AA5977 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30BA20B166FF00AA5977 /* main.m */; };
@@ -29,8 +28,6 @@
 		CABF30A820B166FD00AA5977 /* WIPLazyTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIPLazyTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABF30AB20B166FD00AA5977 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CABF30AC20B166FD00AA5977 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CABF30AE20B166FD00AA5977 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CABF30AF20B166FD00AA5977 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CABF30B420B166FF00AA5977 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CABF30B720B166FF00AA5977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CABF30B920B166FF00AA5977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,8 +78,6 @@
 			children = (
 				CABF30AB20B166FD00AA5977 /* AppDelegate.h */,
 				CABF30AC20B166FD00AA5977 /* AppDelegate.m */,
-				CABF30AE20B166FD00AA5977 /* ViewController.h */,
-				CABF30AF20B166FD00AA5977 /* ViewController.m */,
 				CABF30B420B166FF00AA5977 /* Assets.xcassets */,
 				CABF30B620B166FF00AA5977 /* LaunchScreen.storyboard */,
 				CABF30B920B166FF00AA5977 /* Info.plist */,
@@ -199,7 +194,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CABF30B020B166FD00AA5977 /* ViewController.m in Sources */,
 				CABF30BB20B166FF00AA5977 /* main.m in Sources */,
 				CABF30AD20B166FD00AA5977 /* AppDelegate.m in Sources */,
 			);
