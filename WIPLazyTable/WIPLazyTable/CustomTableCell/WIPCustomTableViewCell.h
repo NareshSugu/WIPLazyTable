@@ -10,8 +10,8 @@
 
 @interface WIPCustomTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) UIImageView *tileImageView;
-@property (weak, nonatomic) UILabel     *titleLabel;
-@property (weak, nonatomic) UILabel     *descriptionLabel;
+@property (nonatomic, readonly) UIImageView *tileImageView;
+@property (nonatomic, readonly) UILabel     *titleLabel;
+@property (nonatomic, readonly) UILabel     *descriptionLabel;
 
 @end

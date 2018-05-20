@@ -7,6 +7,7 @@
 //
 
 #import "WIPCustomTableViewCell.h"
+#import "AppDelegate.h"
 
 @implementation WIPCustomTableViewCell
 
@@ -19,29 +20,35 @@
 
 - (void)setupCellView {
     
-    [self setupTileImageView];
     [self setupTitleLabel];
     [self setupDescriptionLabel];
-    
+    [self setupTileImageView];
+
 }
 
 - (void)setupTileImageView {
     
-    // create imageView
+    _tileImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [_tileImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self addSubview:_tileImageView];
     [self setupTileImageViewConstraints];
     
 }
 
 - (void)setupTitleLabel {
     
-    // create label
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    [_titleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self addSubview:_titleLabel];
     [self setupTitleLabelConstraints];
     
 }
 
 - (void)setupDescriptionLabel {
     
-    // create label
+    _descriptionLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    [_descriptionLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self addSubview:_descriptionLabel];
     [self setupDescriptionLabelConstraints];
     
 }
