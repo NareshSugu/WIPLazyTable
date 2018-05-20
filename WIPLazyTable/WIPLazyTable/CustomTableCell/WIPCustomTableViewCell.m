@@ -64,20 +64,25 @@
 #pragma mark Constraints
 
 - (void)setupTileImageViewConstraints {
-    // set Constraints
+    [_tileImageView constraintSetSize:APP_COMMON.standardCellImageSize];
+    [_tileImageView constraintAlignLeadingOfView:_titleLabel withDistance:0.0f];
+    [_tileImageView constraintAlignBelowView:_titleLabel withDistance:APP_COMMON.standardVerticalMargin];
 }
 
 - (void)setupTitleLabelConstraints {
     
     [_titleLabel constraintAlignTopInParentWithDistance:APP_COMMON.standardTopMargin];
-    [_titleLabel constraintAlignLeadingInParentWithDistance:APP_COMMON.standardHorizontalMargin];
-    [_titleLabel constraintAlignTrailingInParentWithDistance:APP_COMMON.standardHorizontalMargin];
-    [_titleLabel constraintAlignBottomInParentWithDistance:APP_COMMON.standardVerticalMargin];
+    [_titleLabel constraintAlignLeadingInParentWithDistance:APP_COMMON.standardLeadingMargin];
+    [_titleLabel constraintAlignTrailingInParentWithDistance:APP_COMMON.standardTrailingMargin];
 
 }
 
 - (void)setupDescriptionLabelConstraints {
-    // set Constraints
+    [_descriptionLabel constraintAlignBelowView:_titleLabel withDistance:APP_COMMON.standardTopMargin];
+    [_descriptionLabel constraintAlignTrailingInParentWithDistance:APP_COMMON.standardTrailingMargin];
+    [_descriptionLabel constraintAlignLeadingInParentWithDistance: APP_COMMON.standardLeadingMargin + APP_COMMON.standardCellImageViewWidth + APP_COMMON.standardHorizontalMargin];
+    [_descriptionLabel constraintAlignBottomInParentWithDistance:APP_COMMON.standardLeadingMargin];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
