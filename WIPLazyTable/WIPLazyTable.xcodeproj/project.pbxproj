@@ -14,6 +14,8 @@
 		CABF30C520B166FF00AA5977 /* WIPLazyTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30C420B166FF00AA5977 /* WIPLazyTableTests.m */; };
 		CABF30D220B1698F00AA5977 /* WIPRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30D120B1698F00AA5977 /* WIPRootTableViewController.m */; };
 		CABF30D320B1698F00AA5977 /* WIPRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30D120B1698F00AA5977 /* WIPRootTableViewController.m */; };
+		CABF30D720B16D7C00AA5977 /* WIPCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30D620B16D7C00AA5977 /* WIPCustomTableViewCell.m */; };
+		CABF30D820B16D7C00AA5977 /* WIPCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30D620B16D7C00AA5977 /* WIPCustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		CABF30C620B166FF00AA5977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CABF30D020B1698F00AA5977 /* WIPRootTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WIPRootTableViewController.h; sourceTree = "<group>"; };
 		CABF30D120B1698F00AA5977 /* WIPRootTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WIPRootTableViewController.m; sourceTree = "<group>"; };
+		CABF30D520B16D7C00AA5977 /* WIPCustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WIPCustomTableViewCell.h; sourceTree = "<group>"; };
+		CABF30D620B16D7C00AA5977 /* WIPCustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WIPCustomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		CABF30AA20B166FD00AA5977 /* WIPLazyTable */ = {
 			isa = PBXGroup;
 			children = (
+				CABF30D420B16D0500AA5977 /* CustomTableCell */,
 				CABF30AB20B166FD00AA5977 /* AppDelegate.h */,
 				CABF30AC20B166FD00AA5977 /* AppDelegate.m */,
 				CABF30D020B1698F00AA5977 /* WIPRootTableViewController.h */,
@@ -99,6 +104,15 @@
 				CABF30C620B166FF00AA5977 /* Info.plist */,
 			);
 			path = WIPLazyTableTests;
+			sourceTree = "<group>";
+		};
+		CABF30D420B16D0500AA5977 /* CustomTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				CABF30D520B16D7C00AA5977 /* WIPCustomTableViewCell.h */,
+				CABF30D620B16D7C00AA5977 /* WIPCustomTableViewCell.m */,
+			);
+			path = CustomTableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CABF30BB20B166FF00AA5977 /* main.m in Sources */,
+				CABF30D720B16D7C00AA5977 /* WIPCustomTableViewCell.m in Sources */,
 				CABF30AD20B166FD00AA5977 /* AppDelegate.m in Sources */,
 				CABF30D220B1698F00AA5977 /* WIPRootTableViewController.m in Sources */,
 			);
@@ -212,6 +227,7 @@
 			files = (
 				CABF30D320B1698F00AA5977 /* WIPRootTableViewController.m in Sources */,
 				CABF30C520B166FF00AA5977 /* WIPLazyTableTests.m in Sources */,
+				CABF30D820B16D7C00AA5977 /* WIPCustomTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
