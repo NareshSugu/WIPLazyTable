@@ -53,6 +53,24 @@
     }
     
 }
+- (void)handleError:(NSError *)error
+{
+    NSString *errorMessage = [error localizedDescription];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Error !!", @"")
+                                                                   message:errorMessage
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *OKAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"")
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction *action) {
+                                                         // dissmissal of alert completed
+                                                     }];
+    
+    [alert addAction:OKAction];
+    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+}
+
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

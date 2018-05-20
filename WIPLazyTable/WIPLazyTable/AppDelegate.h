@@ -23,5 +23,7 @@ static NSString * const canadaStateUrl =
 @property (strong, nonatomic) WIPRootTableViewController    *rootTableViewController;
 @property (strong, nonatomic) WIPAppCommon                  *appCommon;
 
+- (void)handleError:(NSError *)error;
+
 @end
 
