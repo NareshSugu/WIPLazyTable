@@ -43,7 +43,7 @@ static NSString *CellIdentifier = @"CellIdentifier";
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return kCustomRowCount;
+    return [_tableViewContentList[kRows] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

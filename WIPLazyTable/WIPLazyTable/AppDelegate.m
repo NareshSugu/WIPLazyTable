@@ -73,6 +73,7 @@
 - (void)DataProvider:(NSDictionary *)fetchedData {
     
     _rootTableViewController.tableViewContentList = fetchedData;
+    [[_rootTableViewController navigationItem] setTitle:fetchedData[kNavigationTitle]];
     [_rootTableViewController.tableView reloadData];
     
 }
