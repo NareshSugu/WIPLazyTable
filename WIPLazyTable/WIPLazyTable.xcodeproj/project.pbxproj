@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA657C7E20B18D67000FD7E5 /* UIView+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CA657C7D20B18D67000FD7E5 /* UIView+Autolayout.m */; };
+		CA657C7F20B18D67000FD7E5 /* UIView+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CA657C7D20B18D67000FD7E5 /* UIView+Autolayout.m */; };
 		CABF30AD20B166FD00AA5977 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CABF30AC20B166FD00AA5977 /* AppDelegate.m */; };
 		CABF30B520B166FF00AA5977 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABF30B420B166FF00AA5977 /* Assets.xcassets */; };
 		CABF30B820B166FF00AA5977 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABF30B620B166FF00AA5977 /* LaunchScreen.storyboard */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA657C7C20B18D67000FD7E5 /* UIView+Autolayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Autolayout.h"; sourceTree = "<group>"; };
+		CA657C7D20B18D67000FD7E5 /* UIView+Autolayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Autolayout.m"; sourceTree = "<group>"; };
 		CABF30A820B166FD00AA5977 /* WIPLazyTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIPLazyTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABF30AB20B166FD00AA5977 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CABF30AC20B166FD00AA5977 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA657C7B20B18CB8000FD7E5 /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				CA657C7C20B18D67000FD7E5 /* UIView+Autolayout.h */,
+				CA657C7D20B18D67000FD7E5 /* UIView+Autolayout.m */,
+			);
+			path = AutoLayout;
+			sourceTree = "<group>";
+		};
 		CABF309F20B166FD00AA5977 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +105,7 @@
 		CABF30AA20B166FD00AA5977 /* WIPLazyTable */ = {
 			isa = PBXGroup;
 			children = (
+				CA657C7B20B18CB8000FD7E5 /* AutoLayout */,
 				CABF30DE20B1738900AA5977 /* AppCommon */,
 				CABF30D420B16D0500AA5977 /* CustomTableCell */,
 				CABF30AB20B166FD00AA5977 /* AppDelegate.h */,
@@ -245,6 +259,7 @@
 				CABF30D720B16D7C00AA5977 /* WIPCustomTableViewCell.m in Sources */,
 				CABF30AD20B166FD00AA5977 /* AppDelegate.m in Sources */,
 				CABF30D220B1698F00AA5977 /* WIPRootTableViewController.m in Sources */,
+				CA657C7E20B18D67000FD7E5 /* UIView+Autolayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +269,7 @@
 			files = (
 				CABF30D320B1698F00AA5977 /* WIPRootTableViewController.m in Sources */,
 				CABF30C520B166FF00AA5977 /* WIPLazyTableTests.m in Sources */,
+				CA657C7F20B18D67000FD7E5 /* UIView+Autolayout.m in Sources */,
 				CABF30D820B16D7C00AA5977 /* WIPCustomTableViewCell.m in Sources */,
 				CABF30E220B173BF00AA5977 /* WIPAppCommon.m in Sources */,
 			);
