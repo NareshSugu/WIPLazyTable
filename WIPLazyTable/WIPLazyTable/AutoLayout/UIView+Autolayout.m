@@ -43,4 +43,54 @@
 -(NSLayoutConstraint*) constraintAlignLeadingInParentWithDistance:(CGFloat)distance{return [self constraintAlignAttributeToParent:NSLayoutAttributeLeading constant:distance];}
 -(NSLayoutConstraint*) constraintAlignTrailingInParentWithDistance:(CGFloat)distance{return [self constraintAlignAttributeToParent:NSLayoutAttributeTrailing constant:-distance];}
 
+//-----------------------------------------------------
+// Relative to other views
+//-----------------------------------------------------
+
+- (NSLayoutConstraint *) constraintAlignAboveView:(UIView*)view withDistance:(CGFloat)distance
+{
+    
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:view attribute:NSLayoutAttributeTop
+                                                                 multiplier:1.0f constant:-distance];
+    [NSLayoutConstraint activateConstraints:@[constraint]];
+    
+    return constraint;
+}
+
+- (NSLayoutConstraint*) constraintAlignBelowView:(UIView*)view withDistance:(CGFloat)distance
+{
+    
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:view attribute:NSLayoutAttributeBottom
+                                                                 multiplier:1.0f constant:distance];
+    [NSLayoutConstraint activateConstraints:@[constraint]];
+    
+    return constraint;
+}
+
+- (NSLayoutConstraint*) constraintAlignLeadingOfView:(UIView*)view withDistance:(CGFloat)distance
+{
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTrailing
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:view attribute:NSLayoutAttributeLeading
+                                                                 multiplier:1.0f constant:-distance];
+    [NSLayoutConstraint activateConstraints:@[constraint]];
+    
+    return constraint;
+}
+
+- (NSLayoutConstraint*) constraintAlignTrailingOfView:(UIView*)view withDistance:(CGFloat)distance
+{
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeading
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:view attribute:NSLayoutAttributeTrailing
+                                                                 multiplier:1.0f constant:distance];
+    [NSLayoutConstraint activateConstraints:@[constraint]];
+    
+    return constraint;
+}
+
 @end

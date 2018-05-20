@@ -27,5 +27,10 @@
 - (NSLayoutConstraint*) constraintAlignLeadingInParentWithDistance:(CGFloat)distance;
 - (NSLayoutConstraint*) constraintAlignTrailingInParentWithDistance:(CGFloat)distance;
 
+// Relative to other views
+- (NSLayoutConstraint*) constraintAlignAboveView:(UIView*)view withDistance:(CGFloat)distance;
+- (NSLayoutConstraint*) constraintAlignBelowView:(UIView*)view withDistance:(CGFloat)distance;
+- (NSLayoutConstraint*) constraintAlignLeadingOfView:(UIView*)view withDistance:(CGFloat)distance;
+- (NSLayoutConstraint*) constraintAlignTrailingOfView:(UIView*)view withDistance:(CGFloat)distance;
 
 @end
