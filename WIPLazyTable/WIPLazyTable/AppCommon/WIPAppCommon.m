@@ -27,8 +27,8 @@
         self.standardCellImageViewHeight =    APP_COMMON_NUMBER_PARAMETER(100.0f, 100.0f);
         self.standardCellImageSize = CGSizeMake(_standardCellImageViewWidth, _standardCellImageViewHeight);
 
-        self.titlePalceholder =         @"Title";
-        self.descriptionPalceholder =   @"This is atest description placeholder. the contents should load from a rest url and replace current place holder";
+        self.titlePalceholder =         @"No Title";
+        self.descriptionPalceholder =     @"No Descriptiption Available";
     }
     return self;
 }

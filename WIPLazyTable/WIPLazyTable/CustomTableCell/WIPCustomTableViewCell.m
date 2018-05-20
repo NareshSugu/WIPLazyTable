@@ -64,10 +64,10 @@
 #pragma mark Constraints
 
 - (void)setupTileImageViewConstraints {
+    
     [_tileImageView constraintSetSize:APP_COMMON.standardCellImageSize];
     [_tileImageView constraintAlignLeadingInParentWithDistance:APP_COMMON.standardLeadingMargin];
     [_tileImageView constraintAlignBelowView:_titleLabel withDistance:APP_COMMON.standardVerticalMargin];
-    [_tileImageView constraintAlignBottomInParentWithDistance:APP_COMMON.standardBottomMargin];
 
 }
 
