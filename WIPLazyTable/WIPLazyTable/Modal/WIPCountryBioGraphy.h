@@ -11,6 +11,8 @@
 
 @interface WIPCountryBioGraphy : NSObject
 
+@property (nonatomic, strong) NSString  *navigationTitle;
+
 @property (nonatomic, strong) NSString  *title;
 @property (nonatomic, strong) UIImage   *tileImage;
 @property (nonatomic, strong) NSString  *descriptionSubTitle;
