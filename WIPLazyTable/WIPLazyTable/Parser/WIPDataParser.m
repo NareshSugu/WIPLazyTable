@@ -68,10 +68,20 @@
                 if([obj isKindOfClass:[NSDictionary class]]){
                     if(obj){
                         
-                        rowsContent = [[WIPCountryBioGraphyRowsContent alloc] init];
-                        rowsContent.title = obj[kRowTitle];
-                        rowsContent.descriptionSubTitle = obj[kRowDescription];
-                        rowsContent.tileImageURLString = obj[kRowImageHref];
+                        if (obj != nil || ! [obj isEqual:[NSNull null]]) {
+                            
+                            rowsContent = [[WIPCountryBioGraphyRowsContent alloc] init];
+                            if (![obj[kRowTitle] isEqual:[NSNull null]]) {
+                                rowsContent.title = obj[kRowTitle];
+                            }
+                            if (![obj[kRowDescription] isEqual:[NSNull null]]) {
+                                rowsContent.descriptionSubTitle = obj[kRowTitle];
+                            }
+                            if (![obj[kRowImageHref] isEqual:[NSNull null]]) {
+                                rowsContent.tileImageURLString = obj[kRowTitle];
+                            }
+
+                        }
 
                     }
                     
