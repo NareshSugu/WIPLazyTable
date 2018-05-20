@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WIPAppCommon.h"
+#import "UIView+Autolayout.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +26,8 @@
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
     
+    [UIView setTopWindow:self.window];
+
     [self setupAppCommon];
 
     return YES;

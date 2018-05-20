@@ -10,6 +10,11 @@
 
 @implementation UIView (Autolayout)
 
++ (void) setTopWindow:(UIWindow*)window
+{
+    topWindow = window;
+}
+
 //-----------------------------------------------------
 // Relative to Parent
 //-----------------------------------------------------
@@ -92,5 +97,165 @@
     
     return constraint;
 }
+
+//-----------------------------------------------------
+// Absolute Positioning
+//-----------------------------------------------------
+
+- (NSLayoutConstraint*) constraintSetHeight:(CGFloat)height
+{
+    NSLayoutConstraint *constraint = [self.superview constraintForAttribute:NSLayoutAttributeHeight
+                                                                    forView:self];
+    if(constraint) {
+        [self constraintUpdateConstantHeight:height];
+        return constraint;
+    }
+    
+    constraint =  [NSLayoutConstraint constraintWithItem:self
+                                               attribute:NSLayoutAttributeHeight
+                                               relatedBy:NSLayoutRelationEqual
+                                                  toItem:nil
+                                               attribute:NSLayoutAttributeNotAnAttribute
+                                              multiplier:0.0f
+                                                constant:height];
+    
+    constraint.active = YES;
+    return constraint;
+}
+
+- (NSLayoutConstraint*) constraintSetWidth:(CGFloat)width
+{
+    NSLayoutConstraint *constraint = [self.superview constraintForAttribute:NSLayoutAttributeWidth
+                                                                    forView:self];
+    if(constraint) {
+        [self constraintUpdateConstantWidth:width];
+        return constraint;
+    }
+    
+    
+    constraint = [NSLayoutConstraint constraintWithItem:self
+                                              attribute:NSLayoutAttributeWidth
+                                              relatedBy:NSLayoutRelationEqual
+                                                 toItem:nil
+                                              attribute:NSLayoutAttributeNotAnAttribute
+                                             multiplier:0.0f
+                                               constant:width];
+    constraint.active = YES;
+    return constraint;
+}
+
+- (NSArray*) constraintSetSize:(CGSize)size
+{
+    return [NSArray arrayWithObjects:[self constraintSetHeight:size.height], [self constraintSetWidth:size.width] , nil];
+}
+
+//-----------------------------------------------------
+// General Utils
+//-----------------------------------------------------
+
++ (NSLayoutConstraint*) recursiveConstraintForAttribute:(NSLayoutAttribute)attribute
+                                             parentView:(UIView*)parentView
+                                                forView:(UIView*)view
+{
+    if(parentView == nil)
+        return nil;
+    
+    for(NSLayoutConstraint *constraint in parentView.constraints)
+    {
+        if((constraint.firstItem == view)
+           && (constraint.firstAttribute == attribute)
+           && constraint.isActive) {
+            return constraint;
+        }
+    }
+    
+    return [UIView recursiveConstraintForAttribute:attribute
+                                        parentView:parentView.superview
+                                           forView:view];
+}
+
+- (NSLayoutConstraint*) constraintForAttribute:(NSLayoutAttribute)attribute forView:(UIView*)view
+{
+    return [UIView recursiveConstraintForAttribute:attribute
+                                        parentView:self
+                                           forView:view];
+}
+
+
+
+//-----------------------------------------------------
+// Update Constraints
+//-----------------------------------------------------
+- (void) constraintUpdateConstantAttribute:(NSLayoutAttribute)attribute
+                              updatedValue:(CGFloat)updatedValue
+                              updateLayout:(BOOL)updateLayout
+{
+    for(NSLayoutConstraint *viewConstraint in self.constraints)
+    {
+        if((viewConstraint.firstItem == self)
+           && (viewConstraint.firstAttribute == attribute)
+           && (viewConstraint.isActive)
+           && (viewConstraint.secondItem == nil)
+           && (viewConstraint.secondAttribute == NSLayoutAttributeNotAnAttribute)) {
+            
+            [viewConstraint setConstant:updatedValue];
+            if(updateLayout){
+                if([self isDescendantOfView:topWindow]){
+                    [self updateConstraintsIfNeeded];
+                    [self layoutIfNeeded];
+                    [self.superview layoutIfNeeded];
+                }
+            }
+            return;
+        }
+    }
+    
+    
+    NSLayoutConstraint* constraint = [self.superview constraintForAttribute:attribute forView:self]; // Searches recursively
+    
+    if(constraint == nil){
+        NSLog(@"|WARNING| No constraint exists.");
+        return;
+    }
+    
+    [constraint setConstant:updatedValue];
+    
+    if(updateLayout){
+        if([self isDescendantOfView:topWindow]){
+            [self updateConstraintsIfNeeded];
+            [self layoutIfNeeded];
+            [self.superview layoutIfNeeded];
+        }
+    }
+}
+
+- (void)constraintUpdateConstantHeight:(CGFloat)val
+                          updateLayout:(BOOL)updateLayout{
+    
+    [self constraintUpdateConstantAttribute:NSLayoutAttributeHeight
+                               updatedValue:val
+                               updateLayout:updateLayout];
+    
+}
+
+- (void)constraintUpdateConstantWidth:(CGFloat)val
+                         updateLayout:(BOOL)updateLayout{
+    
+    [self constraintUpdateConstantAttribute:NSLayoutAttributeWidth
+                               updatedValue:val
+                               updateLayout:updateLayout];
+    
+}
+
+- (void)constraintUpdateConstantHeight:(CGFloat)val{
+    
+    [self constraintUpdateConstantHeight:val updateLayout:YES];
+    
+}
+
+- (void)constraintUpdateConstantWidth:(CGFloat)val{
+    [self constraintUpdateConstantWidth:val updateLayout:YES];
+}
+
 
 @end
