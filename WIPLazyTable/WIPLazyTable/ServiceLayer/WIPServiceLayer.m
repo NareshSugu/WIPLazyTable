@@ -25,10 +25,10 @@
 -(instancetype)initWithUrl:(NSString*) requestURLString
 {
     if (self) {
-        _request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURLString]];
-        _queue = [[NSOperationQueue alloc] init];
+        _request    =  [NSURLRequest requestWithURL:[NSURL URLWithString:requestURLString]];
+        _queue      =  [[NSOperationQueue alloc] init];
 
-        [self executeSessionDataTask];
+        [self executeURLRequest];
         
     }
     
@@ -36,65 +36,10 @@
 
 }
 
-- (void)executeSessionDataTask {
-    
-    NSURLSessionDataTask *sessionTask =
-    [[NSURLSession sharedSession] dataTaskWithRequest:_request
-                                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                        
-                                        if (error != nil)
-                                        {
-                                            [[NSOperationQueue mainQueue] addOperationWithBlock: ^{
-                                                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                                                
-                                                if (@available(iOS 9.0, *)) {
-                                                    if ([error code] == NSURLErrorAppTransportSecurityRequiresSecureConnection)
-                                                    {
-                                                        abort();
-                                                    }
-                                                    else
-                                                    {
-                                                        [SharedAppDelegate handleError:error];
-                                                    }
-                                                } else {
-                                                    // Fallback on earlier versions
-                                                }
-                                            }];
-                                        }
-                                        else
-                                        {
-                                            self.parser = [[WIPDataParser alloc] initWithData:data];
-                                            
-                                            __weak WIPServiceLayer *weakSelf = self;
-                                            
-                                            [self parser].errorHandler = ^(NSError *parseError) {
-                                                dispatch_async(dispatch_get_main_queue(), ^{
-                                                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                                                    [weakSelf handleError:parseError];
-                                                });
-                                            };
-                                            
-                                            __weak WIPDataParser *weakParser = self.parser;
-
-                                            self.parser.completionBlock = ^(void) {
-                                                dispatch_async(dispatch_get_main_queue(), ^{
-                                                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                                                    if (weakParser.countryBioGraphyRecordDictionary != nil)
-                                                    {
-                                                        [weakSelf hasDataDownloaded:weakParser.countryBioGraphyRecordDictionary];
-                                                    }
-                                                });
-                                                
-                                                weakSelf.queue = nil;
-                                            };
-                                            
-                                            [self.queue addOperation:self.parser];
-                                        }
-                                    }];
-    [sessionTask resume];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-
+- (void)executeURLRequest {
+    //TODO trigger URL request
 }
+
 - (void)handleError:(NSError *)error
 {
     [SharedAppDelegate handleError:error];
