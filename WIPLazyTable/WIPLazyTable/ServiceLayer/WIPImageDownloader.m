@@ -12,7 +12,7 @@
 
 @interface WIPImageDownloader ()
 
-@property (nonatomic, strong) NSURLSessionDataTask *sessionTask;
+@property (nonatomic, strong) NSOperationQueue *imageDownloadQueue;
 
 @end
 
@@ -20,59 +20,63 @@
 
 - (void)startDownload
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[self rowContentRecord].tileImageURLString]];
+    __block NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[self rowContentRecord].tileImageURLString]];
     
-    _sessionTask = [[NSURLSession sharedSession] dataTaskWithRequest:request
-                                                   completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                       
-                                                       if (error != nil)
-                                                       {
-                                                           if (@available(iOS 9.0, *)) {
-                                                               if ([error code] == NSURLErrorAppTransportSecurityRequiresSecureConnection)
-                                                               {
-                                                                   // if you get error NSURLErrorAppTransportSecurityRequiresSecureConnection (-1022),
-                                                                   // then your Info.plist has not been properly configured to match the target server.
-                                                                   //
-                                                                   abort();
-                                                               }
-                                                           } else {
-                                                               // Fallback on earlier versions
-                                                           }
-                                                       }
-                                                       
-                                                       [[NSOperationQueue mainQueue] addOperationWithBlock: ^{
-                                                           
-                                                           // Set appIcon and clear temporary data/image
-                                                           UIImage *image = [[UIImage alloc] initWithData:data];
-                                                           
-                                                           if (image.size.width != APP_COMMON.standardCellImageViewWidth || image.size.height != APP_COMMON.standardCellImageViewHeight)
-                                                           {
-                                                               CGSize itemSize = CGSizeMake(APP_COMMON.standardCellImageViewWidth, APP_COMMON.standardCellImageViewHeight);
-                                                               UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0f);
-                                                               CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-                                                               [image drawInRect:imageRect];
-                                                               [self rowContentRecord].tileImage = UIGraphicsGetImageFromCurrentImageContext();
-                                                               UIGraphicsEndImageContext();
-                                                           }
-                                                           else
-                                                           {
-                                                               [self rowContentRecord].tileImage = image;
-                                                           }
-                                                           
-                                                           if (self.completionHandler != nil)
-                                                           {
-                                                               self.completionHandler();
-                                                           }
-                                                       }];
-                                                   }];
+    _imageDownloadQueue = [[NSOperationQueue alloc] init];
+
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        [NSURLConnection sendAsynchronousRequest:request queue:self.imageDownloadQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+         {
+             if ([data length] > 0 && error == nil) {
+                 //            [delegate receivedData:data];
+                 [[NSOperationQueue mainQueue] addOperationWithBlock: ^{
+                     
+                     UIImage *image = [[UIImage alloc] initWithData:data];
+                     
+                     if (image.size.width != APP_COMMON.standardCellImageViewWidth || image.size.height != APP_COMMON.standardCellImageViewHeight)
+                     {
+                         CGSize itemSize = CGSizeMake(APP_COMMON.standardCellImageViewWidth, APP_COMMON.standardCellImageViewHeight);
+                         UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0f);
+                         CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+                         [image drawInRect:imageRect];
+                         [self rowContentRecord].tileImage = UIGraphicsGetImageFromCurrentImageContext();
+                         UIGraphicsEndImageContext();
+                     }
+                     else
+                     {
+                         [self rowContentRecord].tileImage = image;
+                     }
+                     
+                     if (self.completionHandler != nil)
+                     {
+                         self.completionHandler();
+                     }
+                 }];
+                 
+             }
+             
+             else if ([data length] == 0 && error == nil){
+                 // empty data
+             }
+             else if (error != nil && error.code == NSURLErrorTimedOut){
+                 // Timed out
+             }
+             else if (error != nil){
+                 // Download error
+             }
+         }];
+        
+    });
     
-    [self.sessionTask resume];
 }
 
 - (void)cancelDownload
 {
-    [self.sessionTask cancel];
-    _sessionTask = nil;
+    
+    NSOperation *lastOp = [self.imageDownloadQueue.operations lastObject];
+    [lastOp cancel];
+    
 }
 
 @end
