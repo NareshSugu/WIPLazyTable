@@ -25,6 +25,7 @@
 -(instancetype)initWithUrl:(NSString*) requestURLString
 {
     if (self) {
+        
         _request    =  [NSURLRequest requestWithURL:[NSURL URLWithString:requestURLString]];
         _queue      =  [[NSOperationQueue alloc] init];
 
@@ -37,7 +38,24 @@
 }
 
 - (void)executeURLRequest {
-    //TODO trigger URL request
+
+
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURLResponse * response = nil;
+        NSError * error = nil;
+        NSData * data = [NSURLConnection sendSynchronousRequest:self.request
+                                              returningResponse:&response
+                                                          error:&error];
+        if (error != nil)
+        {
+            //parse data
+        }
+        else
+        {
+            
+        }
+    });
+
 }
 
 - (void)handleError:(NSError *)error
