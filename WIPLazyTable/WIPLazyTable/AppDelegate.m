@@ -53,8 +53,19 @@
     }
     
 }
+
+- (void)closeNetWorkRequest {
+    
+    if (_serviceLayer) {
+        _serviceLayer = nil;
+    }
+    
+}
+
 - (void)handleError:(NSError *)error
 {
+    [self closeNetWorkRequest];
+    
     NSString *errorMessage = [error localizedDescription];
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Error !!", @"")
@@ -72,6 +83,8 @@
 
 - (void)DataProvider:(NSDictionary *)fetchedData {
     
+    [self closeNetWorkRequest];
+
     _rootTableViewController.tableViewContentList = fetchedData;
     [[_rootTableViewController navigationItem] setTitle:fetchedData[kNavigationTitle]];
     [_rootTableViewController.tableView reloadData];

@@ -26,5 +26,8 @@ static NSString * const canadaStateUrl =
 - (void)handleError:(NSError *)error;
 - (void)DataProvider:(NSDictionary *)fetchedData;
 
+- (void)exucuteNetworkRequest;
+- (void)closeNetWorkRequest;
+
 @end
 
