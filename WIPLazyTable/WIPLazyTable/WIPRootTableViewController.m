@@ -30,6 +30,7 @@ static NSString *CellIdentifier = @"CellIdentifier";
     
     _imageDownloadsInProgress = [NSMutableDictionary dictionary];
 
+    [self addRefreshBarButton];
     [self setupTableView];
 
 }
@@ -50,6 +51,13 @@ static NSString *CellIdentifier = @"CellIdentifier";
 
 }
 
+- (void) addRefreshBarButton {
+    
+    UIBarButtonItem *refresh = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                            target:self action:@selector(refreshTableData:)];
+    self.navigationItem.rightBarButtonItem = refresh;
+
+}
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -148,6 +156,11 @@ static NSString *CellIdentifier = @"CellIdentifier";
     }
 }
 
+- (void)refreshTableData:(id)sender
+{
+    // refresh data and image
+    
+}
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
