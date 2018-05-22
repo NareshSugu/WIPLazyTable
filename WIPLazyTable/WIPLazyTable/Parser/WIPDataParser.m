@@ -24,12 +24,9 @@
     if (self != nil)
     {
         _countryBioGraphyRecord = [[WIPCountryBioGraphy alloc] init];
-        const void *buffer = NULL;
-        size_t size = 0;
-        dispatch_data_t new_data_file = dispatch_data_create_map(data, &buffer, &size);
         
-        _dataToParse = [[NSData alloc] initWithBytes:buffer length:size];
-
+        _dataToParse = data;
+        
         [self parseJsonData];
     }
     return self;
