@@ -158,7 +158,9 @@ static NSString *CellIdentifier = @"CellIdentifier";
 
 - (void)refreshTableData:(id)sender
 {
-    // refresh data and image
+    // As there is no way to check in server wheather any update in data. Hence rehitting server
+    // Server support required o get the delta chnage in data
+    [SharedAppDelegate exucuteNetworkRequest];
     
 }
 #pragma mark - UIScrollViewDelegate
